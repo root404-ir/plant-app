@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../assets/style/landingPage.css'
 const LandingPage = () => {
     return (
@@ -13,7 +14,9 @@ const LandingPage = () => {
                     </span>
                 </div>
                 <div className='button'>
-                    <button className='btn btn-success mt-4'>برو به صفحه محصولات</button>
+                    <Link to={'/products'}>
+                        <button className='btn btn-success mt-4'>برو به صفحه محصولات</button>
+                    </Link>
                 </div>
             </div>
         </div>
