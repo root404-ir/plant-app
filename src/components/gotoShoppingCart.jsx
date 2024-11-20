@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom"
 import '../App.css'
-import { useShoppingCart } from "../shoppingCartContext"
-const GotoShoppingCart = () => {
-    const { cartItems } = useShoppingCart()
+const GotoShoppingCart = ({ message, img, price }) => {
     return (
         <div className="Goto-container">
-            {cartItems.map(item =>
+            <div className="mb-3">
                 <p>
-                    {`محصول ${item.name} به سبد خرید اضافه شد!`}
+                    {message}
                 </p>
-            )}
+                <img src={img} alt="" width={50} />
+                <span>{price}</span>
+            </div>
             <Link to={'/cart'}>برو به سبد خرید</Link>
         </div>
     )

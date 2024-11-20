@@ -17,14 +17,21 @@ const ProductListingPage = () => {
         { id: 5, name: 'انجیر ربابی', price: "250000", category: 'درخت', thumbnail: fiddleLeaf },
         { id: 6, name: 'بن سای', price: "950000", category: 'درخت', thumbnail: bonsai },
     ]
-    const [showNotif, setShowNotif] = useState(false)
+    const [showNotif, setShowNotif] = useState(null)
     const { addToCart, cartItems } = useShoppingCart()
     const handleAddToCart = (product) => {
         addToCart(product)
-        setShowNotif(true)
+        setShowNotif(
+            {
+                message: `محصول ${product.name} به سبد خرید اضافه شد!`,
+                img: product.thumbnail,
+                price: product.price,
+                id: Date.now()
+            }
+        )
         setTimeout(() => {
-            setShowNotif(false)
-        }, 2000)
+            setShowNotif(null)
+        }, 4000)
     }
     const groupedProducts = products.reduce((acc, product) => {
         acc[product.category] = acc[product.category] || []
@@ -49,7 +56,7 @@ const ProductListingPage = () => {
                                     <button className='btn btn-primary' disabled={cartItems.some(item => item.id === product.id)} onClick={() => handleAddToCart(product)}>
                                         {cartItems.some((item) => item.id === product.id) ? 'اضافه شد' : 'افزودن به سبد خرید'}
                                     </button>
-                                    {showNotif ? <GotoShoppingCart productName={product.name} /> : ''}
+                                    {showNotif ? <GotoShoppingCart key={showNotif.id} message={showNotif.message} img={showNotif.img} price={showNotif.price} /> : ''}
                                 </div>
                             </div>
                         )}
