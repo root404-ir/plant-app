@@ -37,7 +37,7 @@ const ShoppingCartPage = () => {
                     </ul>
                     <div className="cart-summary mb-4">
                         <h4>تعداد کل محصولات : {totalItems}</h4>
-                        <h4>قیمت نهایی : {totalPrice}</h4>
+                        <h4>قیمت نهایی : {parseInt(totalPrice)}</h4>
                     </div>
                     <button className="btn btn-primary me-3" onClick={() => {
                         Swal.fire({
