@@ -32,11 +32,11 @@ export const ShoppingCartProvider = ({ children }) => {
             ).filter(item => item.quantity > 0)
         )
     }
-    const removeId = (id) => {
+    const removeItem = (id) => {
         setCartItems(prevItems => prevItems.filter(item => item.id !== id))
     }
     return (
-        <ShoppingCartContext.Provider value={{ cartItems, addToCart, incrementItem, decrementItem, removeId }}>
+        <ShoppingCartContext.Provider value={{ cartItems, addToCart, incrementItem, decrementItem, removeItem }}>
             {children}
         </ShoppingCartContext.Provider>
     )

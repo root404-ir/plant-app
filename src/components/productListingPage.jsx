@@ -49,8 +49,8 @@ const ProductListingPage = () => {
                                     <button className='btn btn-primary' disabled={cartItems.some(item => item.id === product.id)} onClick={() => handleAddToCart(product)}>
                                         {cartItems.some((item) => item.id === product.id) ? 'اضافه شد' : 'افزودن به سبد خرید'}
                                     </button>
+                                    {showNotif ? <GotoShoppingCart productName={product.name} /> : ''}
                                 </div>
-                                {showNotif ? <GotoShoppingCart /> : ''}
                             </div>
                         )}
                     </div>
