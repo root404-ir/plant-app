@@ -7,11 +7,11 @@ const Header = () => {
     return (
         <header className='header d-flex justify-content-between align-items-center p-3 bg-dark text-white'>
             <div className='d-flex gap-4 align-items-center'>
-                <Link to={'/product'} className='text-white text-decoration-none'>
+                <Link to={'/products'} className='text-white text-decoration-none'>
                     <h2>محصولات</h2>
                 </Link>
                 <Link to={'/'} className='text-white text-decoration-none'>
-                    <span>home</span>
+                    <span>خانه</span>
                 </Link>
                 <Link to={'/cart'} className="text-white text-decoration-none">
                     <div className="shopping-cart-icon">

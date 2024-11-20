@@ -1,8 +1,9 @@
 .shopping-cart-icon {
     position: fixed;
     top: 20px;
-    right: 20px;
+    left: 20px;
     font-size: 24px;
+    text-align: left;
 }
 
 .cart-count {

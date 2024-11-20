@@ -1,0 +1,14 @@
+@font-face {
+    font-family: kalameh;
+    src: url('./fonts/kalameh/KalamehWeb-Bold.woff') format('woff');
+}
+
+* {
+    font-family: kalameh;
+}
+
+body {
+    font-family: kalameh;
+    direction: rtl;
+    text-align: right;
+}

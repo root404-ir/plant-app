@@ -8,12 +8,12 @@ import { useShoppingCart } from '../shoppingCartContext'
 
 const ProductListingPage = () => {
     const products = [
-        { id: 1, name: 'Monstera', price: 25, category: 'Tropical', thumbnail: monsteraImg },
-        { id: 2, name: 'Snake Plant', price: 15, category: 'Succulent', thumbnail: snakePlant },
-        { id: 3, name: 'ZZ Plant', price: 20, category: 'Tropical', thumbnail: zzPlant },
-        { id: 4, name: 'Aloe Vera', price: 10, category: 'Succulent', thumbnail: aloeEvera },
-        { id: 5, name: 'Fiddle Leaf Fig', price: 30, category: 'Tree', thumbnail: fiddleLeaf },
-        { id: 6, name: 'Bonsai', price: 40, category: 'Tree', thumbnail: bonsai },
+        { id: 1, name: 'مونسترا', price: 250, category: 'گرمسیری', thumbnail: monsteraImg },
+        { id: 2, name: 'سانسوریا', price: 250, category: 'گیاهان گوشتی', thumbnail: snakePlant },
+        { id: 3, name: 'زامیوکالکاس', price: 4500, category: 'گرمسیری', thumbnail: zzPlant },
+        { id: 4, name: 'آلوئه‌ورا', price: 20000, category: 'گیاهان گوشتی', thumbnail: aloeEvera },
+        { id: 5, name: 'انجیر ربابی', price: 250000, category: 'درخت', thumbnail: fiddleLeaf },
+        { id: 6, name: 'بن سای', price: 950000, category: 'درخت', thumbnail: bonsai },
     ]
     const { addToCart, cartItems } = useShoppingCart()
     const groupedProducts = products.reduce((acc, product) => {
@@ -37,7 +37,7 @@ const ProductListingPage = () => {
                                         <p className='card-text'>{product.price}</p>
                                     </div>
                                     <button className='btn btn-primary' disabled={cartItems.some(item => item.id === product.id)} onClick={() => addToCart(product)}>
-                                        {cartItems.some(item => item.id === product.id ? 'اضافه شد' : 'اضافه کردن به سبد خرید')}
+                                        {cartItems.some((item) => item.id === product.id) ? 'اضافه شد' : 'افزودن به سبد خرید'}
                                     </button>
                                 </div>
                             </div>
