@@ -5,11 +5,13 @@ import { ShoppingCartProvider } from "./shoppingCartContext";
 import ProductListingPage from "./components/productListingPage";
 import ShoppingCartIcon from "./components/shoppingCartIcon";
 import ShoppingCartPage from "./components/shoppingCartPage";
-
+import './App.css'
+import Header from "./components/header";
 function App() {
   return (
     <ShoppingCartProvider>
       <Router>
+        <Header />
         <div className="App">
           <ShoppingCartIcon />
           <Routes>
