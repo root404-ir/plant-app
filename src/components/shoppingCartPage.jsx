@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 import { useShoppingCart } from "../shoppingCartContext"
-import Swal from "sweetalert2"
 
 const ShoppingCartPage = () => {
     const { cartItems, incrementItem, decrementItem, removeItem } = useShoppingCart()
@@ -39,15 +38,7 @@ const ShoppingCartPage = () => {
                         <h4>تعداد کل محصولات : {totalItems}</h4>
                         <h4>قیمت نهایی : {parseInt(totalPrice)}</h4>
                     </div>
-                    <button className="btn btn-primary me-3" onClick={() => {
-                        Swal.fire({
-                            position: "center",
-                            icon: "success",
-                            title: "سفارش شما با موفقیت ثبت شد!",
-                            showConfirmButton: false,
-                            timer: 2500
-                        });
-                    }}>نهایی کردن سفارش</button>
+                    <button className="btn btn-primary me-3" onClick={() => alert('سفارش شما ثبت شد')}>نهایی کردن سفارش</button>
                     <Link to={'/products'} className="btn btn-secondary">برو به ادامه فروشگاه</Link>
                 </>
             )}
